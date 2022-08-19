@@ -12,7 +12,9 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
-import config
+import django_heroku
+import dj_database_url
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -25,13 +27,12 @@ STATIC_DIR = os.path.join(BASE_DIR, "static")
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = ''
+SECRET_KEY = 'django-insecure-%z^caa%o_c&u6$*f=@!lo9h*w2fqbde-yg$i(hy-ibn3!e8opb'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -45,6 +46,7 @@ INSTALLED_APPS = [
     # 'movie_app.apps.MovieAppConfig',
     'ninja',
     'movie_app',
+    
     
 ]
 
@@ -83,10 +85,9 @@ WSGI_APPLICATION = 'movie_proj.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    'default': 
+        dj_database_url.config()
+    
 }
 
 
@@ -132,7 +133,7 @@ MEDIA_URL ='/media/'
 
 STATICFILES_DIRS = [STATIC_DIR]
 
-api_key = config.tmdb_api_key 
+# api_key = config.tmdb_api_key 
 
 api_key = os.environ.get('api_key')
 
@@ -140,3 +141,5 @@ api_key = os.environ.get('api_key')
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+django_heroku.settings(locals())

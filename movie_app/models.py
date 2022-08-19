@@ -21,3 +21,21 @@ class Movie(models.Model):
     def __str__(self):
         return self.title
 
+class Signup(models.Model):
+    username = models.CharField(max_length=50)
+    email = models.EmailField()
+    password = models.CharField(max_length=30)
+  
+    
+    def __str__(self):
+        return self.username
+    
+class Login(models.Model):
+    username = models.CharField(max_length=50)
+    password = models.CharField(max_length=30)
+   
+    
+    def __str__(self):
+        return self.username
+    
+

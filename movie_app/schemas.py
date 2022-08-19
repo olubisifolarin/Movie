@@ -1,9 +1,18 @@
 from dataclasses import dataclass
 from datetime import datetime
-from email.mime import image
 from unicodedata import category
 from ninja import Schema
 from datetime import datetime
+
+class SignOutSchema(Schema):
+    username: str
+    email: str
+    password: str
+    
+class LoginSchema(Schema):
+    username: str
+    password: str
+   
 
 class MovieInSchema(Schema):
     title: str
