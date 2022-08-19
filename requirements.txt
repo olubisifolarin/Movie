@@ -35,7 +35,7 @@ matplotlib==3.5.2
 numpy==1.21.6
 packaging==21.3
 Pillow==9.0.1
-psycopg2 @ file:///C:/ci/psycopg2_1612298715048/work
+psycopg2
 pyasn1==0.4.8
 pyasn1-modules==0.2.8
 pycparser==2.21
@@ -51,11 +51,11 @@ requests==2.28.1
 service-identity==21.1.0
 silx==1.0.0
 six==1.16.0
-sqlparse @ file:///tmp/build/80754af9/sqlparse_1602184451250/work
+sqlparse
 Twisted==22.4.0
 twisted-iocpsupport==1.0.2
 txaio==22.2.1
-typing-extensions @ file:///tmp/build/80754af9/typing_extensions_1631814937681/work
+typing-extensions
 urllib3==1.26.10
 whitenoise==6.2.0
 wincertstore==0.2
