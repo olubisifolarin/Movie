@@ -1,7 +1,7 @@
 Django
 gunicorn
 django-ninja
-psycopog2
+psycopg2
 whitenoise
 dj-database-url
 django-heroku
